@@ -25,3 +25,9 @@ steps:
     PathtoPublish: 'dist/angular'
     ArtifactName: 'drop'
     publishLocation: 'Container'
+- task: AzureRmWebAppDeployment@5
+  inputs:
+    ConnectionType: 'AzureRM'
+    appType: 'webApp'
+    WebAppName: 
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
